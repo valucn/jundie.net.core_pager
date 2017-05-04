@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jundie.net.core_pager.demo_cn", "src\jundie.net.core_pager.demo_cn\jundie.net.core_pager.demo_cn.csproj", "{BA4894A9-24F5-4F4E-9881-22BC32F360E2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,6 +30,10 @@ Global
 		{46A1C35B-1C02-4A19-94C1-2982C9D01776}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46A1C35B-1C02-4A19-94C1-2982C9D01776}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46A1C35B-1C02-4A19-94C1-2982C9D01776}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA4894A9-24F5-4F4E-9881-22BC32F360E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA4894A9-24F5-4F4E-9881-22BC32F360E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA4894A9-24F5-4F4E-9881-22BC32F360E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA4894A9-24F5-4F4E-9881-22BC32F360E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -35,5 +41,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{8D99C2AC-15DE-43CD-B52A-42CDB81AC1D1} = {3A2B0A05-31E9-4809-AE0B-45A484BC0FEA}
 		{46A1C35B-1C02-4A19-94C1-2982C9D01776} = {3A2B0A05-31E9-4809-AE0B-45A484BC0FEA}
+		{BA4894A9-24F5-4F4E-9881-22BC32F360E2} = {3A2B0A05-31E9-4809-AE0B-45A484BC0FEA}
 	EndGlobalSection
 EndGlobal
