@@ -1,0 +1,35 @@
+﻿@addTagHelper "*, jundie.net.core_pager"
+@model IEnumerable<jundie.net.core_pager.demo_cn.models.article>
+@{
+    ViewData["Title"] = "分页示例";
+    ViewData["menu_demo"] = "active";
+    var pagerOption = ViewData["pagerOption"] as jundie.net.core_pager.PagerOptions;
+}
+<h3>@ViewData["Message"]</h3>
+<div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">
+        @ViewData["Title"] (@pagerOption.Total)
+    </div>
+    <!-- Table -->
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Title)</th>
+                <th>@Html.DisplayNameFor(model => model.Author)</th>
+                <th>@Html.DisplayNameFor(model => model.Source)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Title</td>
+                    <td>@item.Author</td>
+                    <td>@item.Source</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<pager pager-option="pagerOption"></pager>
