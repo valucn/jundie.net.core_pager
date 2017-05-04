@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3A2B0A05-31E9-4809-AE0B-45A484BC0FEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jundie.net.core_pager.demo", "src\jundie.net.core_pager.demo\jundie.net.core_pager.demo.csproj", "{8D99C2AC-15DE-43CD-B52A-42CDB81AC1D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jundie.net.core_pager", "src\jundie.net.core_pager\jundie.net.core_pager.csproj", "{46A1C35B-1C02-4A19-94C1-2982C9D01776}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8D99C2AC-15DE-43CD-B52A-42CDB81AC1D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D99C2AC-15DE-43CD-B52A-42CDB81AC1D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D99C2AC-15DE-43CD-B52A-42CDB81AC1D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D99C2AC-15DE-43CD-B52A-42CDB81AC1D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46A1C35B-1C02-4A19-94C1-2982C9D01776}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46A1C35B-1C02-4A19-94C1-2982C9D01776}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46A1C35B-1C02-4A19-94C1-2982C9D01776}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46A1C35B-1C02-4A19-94C1-2982C9D01776}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8D99C2AC-15DE-43CD-B52A-42CDB81AC1D1} = {3A2B0A05-31E9-4809-AE0B-45A484BC0FEA}
+		{46A1C35B-1C02-4A19-94C1-2982C9D01776} = {3A2B0A05-31E9-4809-AE0B-45A484BC0FEA}
+	EndGlobalSection
+EndGlobal
