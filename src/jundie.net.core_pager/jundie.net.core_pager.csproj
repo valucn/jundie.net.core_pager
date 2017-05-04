@@ -1,7 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp1.1</TargetFramework>
+    <Description>骏蝶 asp.net core 分页系统</Description>
+    <PackageProjectUrl>https://github.com/valucn/jundie.net.core_pager</PackageProjectUrl>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
 </Project>
