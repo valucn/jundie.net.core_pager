@@ -1,4 +1,4 @@
-﻿骏蝶 asp.net core 分页系统 Ver1.0.2
+﻿骏蝶 asp.net core pager 分页系统 Ver1.0.3
 <h3>View：</h3>
 <div style="padding: 6px;border: #CCC 1px solid;background-color: #F8F8F8;">
 	<pre>
