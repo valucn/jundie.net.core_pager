@@ -3,8 +3,13 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp1.0</TargetFramework>
     <Description>骏蝶 asp.net core 分页系统</Description>
-    <PackageProjectUrl>https://github.com/valucn/jundie.net.core_pager</PackageProjectUrl>
+    <PackageProjectUrl>http://pager.jundie.net/core</PackageProjectUrl>
     <Version>1.0.1</Version>
+    <Authors>valu</Authors>
+    <Company>Nanjing Jundie Technology Co.,Ltd. CN</Company>
+    <Copyright>Coryright Jundie.Net</Copyright>
+    <RepositoryUrl>https://github.com/valucn/jundie.net.core_pager</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
