@@ -22,7 +22,7 @@ namespace jundie.net.core_pager.demo_cn.Controllers
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "南京骏蝶科技有限公司";
 
             return View();
         }
