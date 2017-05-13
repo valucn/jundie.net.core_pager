@@ -5,12 +5,8 @@
     ViewData["menu_demo"] = "active";
     var pagerOption = ViewData["pagerOption"] as jundie.net.core_pager.PagerOptions;
 }
-<h3>@ViewData["Message"]</h3>
+<h3>@ViewData["Title"]</h3>
 <div class="panel panel-default">
-    <!-- Default panel contents -->
-    <div class="panel-heading">
-        总记录：@Model.TotalItemCount
-    </div>
     <!-- Table -->
     <table class="table table-striped table-bordered">
         <thead>
@@ -31,5 +27,9 @@
             }
         </tbody>
     </table>
+    <!-- Default panel contents -->
+    <div class="panel-footer">
+        共 @Model.PageCount 页 @Model.TotalItemCount 条记录，当前为第 @Model.CurrentPageIndex 页
+    </div>
 </div>
 @Html.PagedListPager(Model, page => Url.Action("index", new { page }))

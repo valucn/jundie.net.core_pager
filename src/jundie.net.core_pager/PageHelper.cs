@@ -21,6 +21,7 @@ namespace jundie.net.core_pager
             data.PageNumber = pageNumber;
             data.PageSize = pageSize;
             data.TotalItemCount = superset.Count();
+            data.CurrentPageIndex = pageNumber;
             data.PageListData = superset.Skip((pageNumber - 1) * pageSize).Take(pageSize);
             return data;
         }
