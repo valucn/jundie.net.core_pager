@@ -15,7 +15,7 @@ namespace jundie.net.core_pager.demo_cn.Controllers
         // GET: /<controller>/
         public IActionResult index(int page = 1)
         {
-            var model = demo_data.AllArticles.OrderByDescending(m => m.PubDate).AsQueryable().ToPagedList(page, 5);
+            var model = demo_data.AllArticles.OrderByDescending(m => m.PubDate).ToPagedList(page, 5);
             return View(model);
         }
     }

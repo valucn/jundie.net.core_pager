@@ -29,7 +29,8 @@
     </table>
     <!-- Default panel contents -->
     <div class="panel-footer">
-        共 @Model.PageCount 页 @Model.TotalItemCount 条记录，当前为第 @Model.CurrentPageIndex 页
+        共 @Model.TotalPageCount 页 @Model.TotalItemCount 条记录，当前为第 @Model.CurrentPageIndex 页
     </div>
 </div>
 @Html.PagedListPager(Model, page => Url.Action("index", new { page }))
+@*@Html.Pager(Model)*@

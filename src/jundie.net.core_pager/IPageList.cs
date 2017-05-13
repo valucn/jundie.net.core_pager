@@ -6,11 +6,11 @@ namespace jundie.net.core_pager
 {
     public interface IPageList
     {
-        int PageCount { get; set; }
+        int TotalPageCount { get; set; }
 
         int TotalItemCount { get; set; }
 
-        int PageNumber { get; set; }
+        int CurrentPageIndex { get; set; }
 
         int PageSize { get; set; }
     }
