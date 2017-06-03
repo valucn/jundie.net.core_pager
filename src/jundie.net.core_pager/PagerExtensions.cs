@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Html;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,25 @@ namespace jundie.net.core_pager
         //}
 
         public static IHtmlContent PagedListPager(this IHtmlHelper html,
+                                                   IPageList list,
+                                                   Func<int, string> generatePageUrl,
+                                                   string prev_page_text = "上一页",
+                                                   string next_page_text = "下一页")
+        {
+
+            TagBuilder ul = new TagBuilder("ul");
+            ul.AddCssClass("pagination");
+            ul = CompleteUlBefore(ul, list, generatePageUrl, prev_page_text);
+            for (int i = 1; i <= list.TotalPageCount; i++)
+            {
+                string temp = generatePageUrl(i);
+                ul.InnerHtml.AppendHtml(GenerateItem(temp, i, list.CurrentPageIndex));
+            }
+            ul = CompleteUlAfter(ul, list, generatePageUrl, next_page_text);
+            return ul;
+        }
+
+        public static IHtmlContent PagedListPager_mobile(this IHtmlHelper html,
                                                    IPageList list,
                                                    Func<int, string> generatePageUrl,
                                                    string prev_page_text = "上一页",

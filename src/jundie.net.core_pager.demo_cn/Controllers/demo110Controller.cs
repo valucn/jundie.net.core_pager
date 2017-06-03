@@ -15,6 +15,13 @@ namespace jundie.net.core_pager.demo_cn.Controllers
         // GET: /<controller>/
         public IActionResult index(int page = 1)
         {
+            var is_mobile = Request.IsMobileBrowser();
+            ViewData["is_mobile"] = is_mobile;
+            if (is_mobile)
+            {
+                PagerOptions po = new PagerOptions();
+                po.NumericPagerItemCount = 2;
+            }
             var model = demo_data.AllArticles.OrderByDescending(m => m.PubDate).ToPagedList(page, 5);
             return View(model);
         }

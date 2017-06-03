@@ -32,5 +32,11 @@
         共 @Model.TotalPageCount 页 @Model.TotalItemCount 条记录，当前为第 @Model.CurrentPageIndex 页
     </div>
 </div>
-@Html.PagedListPager(Model, page => Url.Action("index", new { page }))
-@*@Html.Pager(Model)*@
+@if (bool.Parse(ViewData["is_mobile"].ToString()))
+{
+    <div>@Html.PagedListPager_mobile(Model, page => Url.Action("index", new { page }))</div>
+}
+else
+{
+    <div>@Html.PagedListPager(Model, page => Url.Action("index", new { page }))</div>
+}
