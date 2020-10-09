@@ -43,19 +43,24 @@
 <h3>Controller:</h3>
 <div style="padding: 6px;border: #CCC 1px solid;background-color: #F8F8F8;">
 	<pre>
-public IActionResult index(int page = 1)
+public IActionResult index(string keyword, int page = 1)
 {
-    var model = demo_data.AllArticles.OrderByDescending(m => m.PubDate);
+    var model = demo_data.AllArticles.OrderByDescending(m => m.PubDate).AsQueryable();
+    if (!string.IsNullOrEmpty(keyword))
+    {
+        model = model.Where(m => m.receiver.Contains(keyword));
+    }
     var pagerOption = new PagerOptions
     {
         CurrentPage = page,
-        PageSize = 5,
+        PageSize = 10,
         Total = model.Count(),
-        RouteUrl = "/demo",
+        RouteUrl = Url.Action(nameof(Index), new { keyword }),
         PageIndexParameterName = "page"
     };
     ViewData["pagerOption"] = pagerOption;
-    return View(model.Skip((pagerOption.CurrentPage - 1) * pagerOption.PageSize).Take(pagerOption.PageSize));
+    var list = model.Skip((pagerOption.CurrentPage - 1) * pagerOption.PageSize).Take(pagerOption.PageSize);
+    return View(list);
 }
 	</pre>
 </div>
