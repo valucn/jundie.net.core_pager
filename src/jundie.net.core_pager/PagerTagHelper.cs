@@ -1,11 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Razor.TagHelpers;
-using System;
-using System.Collections.Generic;
 using System.Text;
 
 namespace jundie.net.core_pager
 {
+    [HtmlTargetElement("V6-pager")]
     public class PagerTagHelper : TagHelper
     {
         public PagerOptions PagerOption { get; set; }
@@ -16,11 +15,23 @@ namespace jundie.net.core_pager
         {
             output.TagName = "div";
 
-            if (PagerOption.PageSize <= 0) { PagerOption.PageSize = 15; }
-            if (PagerOption.CurrentPage <= 0) { PagerOption.CurrentPage = 1; }
+            if (PagerOption.PageSize <= 0)
+            {
+                PagerOption.PageSize = 15;
+            }
+            if (PagerOption.CurrentPage <= 0)
+            {
+                PagerOption.CurrentPage = 1;
+            }
             if (PagerOption.Total <= 0) { return; }
-            if (PagerOption.PageIndexParameterName == "") { PagerOption.PageIndexParameterName = "page"; }
-            if (PagerOption.NumericPagerItemCount <= 0) { PagerOption.NumericPagerItemCount = 10; }
+            if (PagerOption.PageIndexParameterName == "")
+            {
+                PagerOption.PageIndexParameterName = "page";
+            }
+            if (PagerOption.NumericPagerItemCount <= 0)
+            {
+                PagerOption.NumericPagerItemCount = 10;
+            }
 
             //总页数
             var totalPage = PagerOption.Total / PagerOption.PageSize + (PagerOption.Total % PagerOption.PageSize > 0 ? 1 : 0);

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace jundie.net.core_pager
+﻿namespace jundie.net.core_pager
 {
     /// <summary>
     /// 分页控件相关选项
@@ -10,12 +6,12 @@ namespace jundie.net.core_pager
     public class PagerOptions
     {
         /// <summary>
-        /// 当前页  必传
+        /// 当前页 必传
         /// </summary>
         public int CurrentPage { get; set; }
 
         /// <summary>
-        /// 总条数  必传
+        /// 总条数 必传
         /// </summary>
         public int Total { get; set; }
 
