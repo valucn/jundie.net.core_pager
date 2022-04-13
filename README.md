@@ -1,4 +1,4 @@
-﻿骏蝶 asp.net core pager 分页系统 Ver1.0.3
+﻿骏蝶 asp.net core pager 分页系统 Ver1.0.5
  <p>有问题请点击上面的“Issues”, Please click on the "Issues" above question.</p>
 <h3>View：</h3>
 <div style="padding: 6px;border: #CCC 1px solid;background-color: #F8F8F8;">
@@ -37,7 +37,7 @@
         &lt;/tbody&gt;
     &lt;/table&gt;
 &lt;/div&gt;
-&lt;pager pager-option=&quot;pagerOption&quot;&gt;&lt;/pager&gt;
+&lt;V6-pager pager-option=&quot;pagerOption&quot;&gt;&lt;/V6-pager&gt;
 	</pre>
 </div>
 <h3>Controller:</h3>
