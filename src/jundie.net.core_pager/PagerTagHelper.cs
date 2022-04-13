@@ -9,11 +9,41 @@ namespace jundie.net.core_pager
     {
         public PagerOptions PagerOption { get; set; }
 
+        /// <summary>
+        /// tag id
+        /// </summary>
+        [HtmlAttributeName("id")]
+        public string tag_id { get; set; }
+
+        /// <summary>
+        /// tag名称
+        /// </summary>
+        [HtmlAttributeName("tag-name")]
+        public string tag_name { get; set; } = "ul";
+
+        /// <summary>
+        /// tag样式名称
+        /// </summary>
+        [HtmlAttributeName("tag-class-name")]
+        public string tag_class_name { get; set; } = "pagination";
+
+        /// <summary>
+        /// 分类参数
+        /// </summary>
+        [HtmlAttributeName("page-index-parameter-name")]
+        public string page_name { get; set; } = "page";
+
+        /// <summary>
+        /// 当前页模板
+        /// </summary>
+        [HtmlAttributeName("current-pager-item-template")]
+        public string current_item { get; set; } = "<li class=\"page-item active\"><a class=\"page-link\" href=\"javascript:void(0);\">{0}</a></li>";
+
         IUrlHelper url;
 
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
-            output.TagName = "div";
+            output.TagName = "";
 
             if (PagerOption.PageSize <= 0)
             {
@@ -67,13 +97,12 @@ namespace jundie.net.core_pager
                             para_connect = "&";
                         }
                         sbPage.Append("\r\n<!-- pager start -->\r\n");
-                        sbPage.Append("<nav>\r\n");
-                        sbPage.Append("  <ul class=\"pagination\">\r\n");
-                        sbPage.AppendFormat("       <li><a href=\"{0}{2}{3}={1}\" aria-label=\"Previous\"><span aria-hidden=\"true\">&laquo;</span></a></li>\r\n",
+                        sbPage.Append($"    <{tag_name} id=\"{tag_id}\" class=\"{tag_class_name}\">\r\n");
+                        sbPage.AppendFormat("        <li><a href=\"{0}{2}{3}={1}\" aria-label=\"Previous\"><span aria-hidden=\"true\">&laquo;</span></a></li>\r\n",
                                                 PagerOption.RouteUrl,
                                                 PagerOption.CurrentPage - 1 <= 0 ? 1 : PagerOption.CurrentPage - 1,
                                                 para_connect,
-                                                PagerOption.PageIndexParameterName);
+                                                page_name);
 
                         int for_start = PagerOption.CurrentPage - PagerOption.NumericPagerItemCount / 2;//4
                         int cha = 1 - for_start - 1;
@@ -92,26 +121,37 @@ namespace jundie.net.core_pager
                         }
                         for (int i = for_start; i <= for_end; i++)
                         {
-                            //url.Action();
-                            sbPage.AppendFormat("       <li {1}><a href=\"{2}{3}{4}={0}\">{0}</a></li>\r\n",
-                                i,
-                                i == PagerOption.CurrentPage ? "class=\"active\"" : "",
-                                PagerOption.RouteUrl,
-                                para_connect,
-                                PagerOption.PageIndexParameterName);
+                            if (i == PagerOption.CurrentPage)
+                            {
+                                sbPage.AppendFormat($"        {current_item}\r\n",
+                                    i,
+                                    i == PagerOption.CurrentPage ? "class=\"active\"" : "",
+                                    PagerOption.RouteUrl,
+                                    para_connect,
+                                    page_name);
+                            }
+                            else
+                            {
+                                //url.Action();
+                                sbPage.AppendFormat("        <li><a href=\"{2}{3}{4}={0}\">{0}</a></li>\r\n",
+                                    i,
+                                    "",
+                                    PagerOption.RouteUrl,
+                                    para_connect,
+                                    page_name);
+                            }
                         }
 
-                        sbPage.Append("       <li>\r\n");
-                        sbPage.AppendFormat("         <a href=\"{0}{2}{3}={1}\" aria-label=\"Next\">\r\n",
+                        sbPage.Append("        <li>\r\n");
+                        sbPage.AppendFormat("            <a href=\"{0}{2}{3}={1}\" aria-label=\"Next\">\r\n",
                                             PagerOption.RouteUrl,
                                             PagerOption.CurrentPage + 1 > totalPage ? PagerOption.CurrentPage : PagerOption.CurrentPage + 1,
                                             para_connect,
-                                            PagerOption.PageIndexParameterName);
-                        sbPage.Append("               <span aria-hidden=\"true\">&raquo;</span>\r\n");
-                        sbPage.Append("         </a>\r\n");
-                        sbPage.Append("       </li>\r\n");
-                        sbPage.Append("   </ul>\r\n");
-                        sbPage.Append("</nav>\r\n");
+                                            page_name);
+                        sbPage.Append("                <span aria-hidden=\"true\">&raquo;</span>\r\n");
+                        sbPage.Append("            </a>\r\n");
+                        sbPage.Append("        </li>\r\n");
+                        sbPage.Append($"    </{tag_name}>\r\n");
                         sbPage.Append("<!--// pager end, Copy right 2017 Jundie.net -->\r\n");
                         #endregion
                     }

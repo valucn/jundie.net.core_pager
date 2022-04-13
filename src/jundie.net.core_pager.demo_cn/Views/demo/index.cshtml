@@ -34,5 +34,11 @@
 </div>
 
 <div class="text-center">
-    <V6-pager pager-option="pagerOption" page-index-parameter-name="page"></V6-pager>
+    <V6-pager pager-option="pagerOption"
+              id="pager"
+              tag-name="div"
+              tag-class-name="pagination"
+              page-index-parameter-name="page"
+              current-pager-item-template='<li class="page-item active"><a class="page-link" href="javascript:void(0);">{0}</a></li>'>
+    </V6-pager>
 </div>
